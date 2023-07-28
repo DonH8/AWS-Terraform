@@ -1,8 +1,8 @@
 resource "aws_instance" "don_instance" {
-    ami        = "ami-05c49a63441937596"  # Replace this with the desired AMI ID
+    ami        = "ami-05c49a63441937596"  
     instance_type   = "t3.micro"
 
-  # Add other instance configurations as needed
+
 }
 
 resource "aws_cloudwatch_metric_alarm" "example_alarm" {
@@ -13,7 +13,7 @@ resource "aws_cloudwatch_metric_alarm" "example_alarm" {
   namespace           = "AWS/EC2"
   period              = "60"
   statistic           = "Average"
-  threshold           = "70"  # Set your desired threshold for triggering the alarm
+  threshold           = "70"  
   alarm_description   = "Alarm when CPU utilization is greater than 70%"
-  alarm_actions       = ["arn:aws:sns:eu-north-1:888659321129:donCICDFailure"]  # Replace with your SNS topic ARN
-}
+  alarm_actions       = ["arn:aws:sns:eu-north-1:888659321129:donCICDFailure"]  
+  }

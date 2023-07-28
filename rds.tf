@@ -1,28 +1,28 @@
 data "aws_subnet" "public_subnet_1" {
-  id = "	subnet-0f5325201f2306f9a"  # Replace this with the ID of your first existing subnet
+  id = "	subnet-0f5325201f2306f9a"  
 }
 
 data "aws_subnet" "private_subnet_1" {
-  id = "subnet-02b98ef0bf5e1c2b8"  # Replace this with the ID of your second existing subnet
+  id = "subnet-02b98ef0bf5e1c2b8" 
 }
 data "aws_subnet" "public_subnet_2" {
-  id = "subnet-008aadb71d0077635"  # Replace this with the ID of your first existing subnet
+  id = "subnet-008aadb71d0077635"  
 }
 
 data "aws_subnet" "private_subnet_2" {
-  id = "subnet-0617ee8091cf0f072"  # Replace this with the ID of your second existing subnet
+  id = "subnet-0617ee8091cf0f072" 
 }
 data "aws_subnet" "public_subnet_3" {
-  id = "subnet-040ebaea2878fae58"  # Replace this with the ID of your first existing subnet
+  id = "subnet-040ebaea2878fae58"  
 }
 
 data "aws_subnet" "private_subnet_3" {
-  id = "subnet-0c0d421275fc8fadb"  # Replace this with the ID of your second existing subnet
+  id = "subnet-0c0d421275fc8fadb"  
 }
 
 resource "aws_rds_cluster" "don_rds_cluster" {
   cluster_identifier   = "don-cluster"
-  engine               = "mysql"  # Change this to your desired database engine
+  engine               = "mysql"  
   engine_version       = "8.0.28"
   database_name        = "don_db"
   master_username      = "admin"

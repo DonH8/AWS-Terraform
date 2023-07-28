@@ -1,21 +1,21 @@
 provider "aws" {
-  region = "eu-north-1"  # Change this to your desired AWS region
+  region = "eu-north-1"  
 }
 resource "aws_vpc" "don_vpc" {
-  cidr_block = "10.0.0.0/16"  # Replace this with the desired CIDR block for your VPC
+  cidr_block = "10.0.0.0/16"  
 
   tags = {
-    Name = "don-VPC-3"  # Give your VPC a name for identification
+    Name = "don-VPC-3"  
   }
 }
 
 resource "aws_subnet" "don_vpc_subnet" {
   vpc_id            = aws_vpc.don_vpc.id
-  cidr_block        = "10.0.1.0/24"  # Replace this with the desired CIDR block for your subnet
-  availability_zone = "eu-north-1a"  # Replace this with the desired AZ for your subnet
+  cidr_block        = "10.0.1.0/24"  
+  availability_zone = "eu-north-1a"  
 
   tags = {
-    Name = "don-VPC-3-Subnet"  # Give your subnet a name for identification
+    Name = "don-VPC-3-Subnet"  
   }
 }
 
@@ -26,8 +26,8 @@ resource "aws_security_group" "don_sg" {
 
 resource "aws_launch_configuration" "don_launch_config" {
   name_prefix     = "don-lc"
-  image_id        = "ami-05c49a63441937596"  # Replace this with the desired AMI ID
-  instance_type   = "t3.micro"  # Replace this with the desired instance type
+  image_id        = "ami-05c49a63441937596"  
+  instance_type   = "t3.micro"  
   security_groups = [aws_security_group.don_sg.id]
 }
 # Define the launch configuration for EC2 instances
