@@ -26,8 +26,8 @@ resource "aws_security_group" "don_sg" {
 
 resource "aws_launch_configuration" "don_launch_config" {
   name_prefix     = "don-lc"
-  image_id        = "ami-040d60c831d02d41c"  # Replace this with the desired AMI ID
-  instance_type   = "t2.micro"  # Replace this with the desired instance type
+  image_id        = "ami-05c49a63441937596"  # Replace this with the desired AMI ID
+  instance_type   = "t3.micro"  # Replace this with the desired instance type
   security_groups = [aws_security_group.don_sg.id]
 }
 # Define the launch configuration for EC2 instances
